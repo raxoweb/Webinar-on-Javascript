@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+    /* h1{
+        text-align: center;
+    }
+    div{
+        background:cyan ;
+        width: 50%;
+        margin: auto;
+        padding: 20px;
+    }
+    #submitteddata{
+        text-align: left;
+    } */
+    </style>
+</head>
+<body>
+    <h1>Registration form</h1>
+    <div>
+  <form action="/submit">
+    <label>First Name</label><br>
+    <input type="text" id="fname" name="fname"/><br><br>
+    <label>Last Name</label><br>
+    <input type="text" id="lname" name="lname"/><br><br>
+    <label>Gender</label><br>
+    <input type="radio" value="Male" name="gender"/><label>Male</label>
+    <input type="radio" value="Female" name="gender"/><label>Female</label>
+    <input type="radio" value="Others" name="gender"/><label>Others</label>
+    <br><br>
+    <label>College</label><br>
+    <select>
+
+        <option name="clg" value="RITS">RITS</option>
+        <option name="clg" value="LNCT">LNCT</option>
+        <option name="clg" value="UIT">UIT</option>
+        <option name="clg" value="Patel">Patel</option>
+        <option name="clg" value="Others">Others</option>
+    </select>
+    <br><br>
+<button type="submit" onclick="onSubmit()">Submit</button><br><br>
+</form>
+
+<div id="submitteddata">
+
+</div>
+<button id="prntbtn" onclick="printContent()">Print</button>
+
+    </div>
+</body>
+    
+    <script type="text/javascript">
+    prntbtn.style.display="none"
+    onSubmit=()=>{
+        console.log("Working fine")
+        a=document.getElementById("fname").value;
+        b=document.getElementById('lname').value;
+        c=document.getElementsByName('gender')[0].value;
+        d=document.getElementsByName('clg')[0].value;
+
+        console.log(a,b,c,d)
+
+        let m=document.getElementById('submitteddata').innerHTML="<div><h3>Name : "+a+" "+b+"</h3><h3>College : "+d+"</h3><h3>Gender : "+c+"</h3></div>"
+        prntbtn.style.display="block"
+    }
+    printContent=()=>{
+        console.log("Print")
+        let content=document.getElementById("submitteddata").innerHTML;
+        var k=window.open("","",'height=500','width=500');
+        k.document.write(content);
+        k.document.close();
+        k.print()
+}
+    </script>
+</html>

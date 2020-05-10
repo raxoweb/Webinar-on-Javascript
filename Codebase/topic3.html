@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+    h1{
+        background: blue;
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <h1 id="test" onmouseover="mouseOver()" onclick="btnClick()">Raxoweb</h1>
+    <h1 id="test1" onclick="btnClick()">Raxoweb Test</h1>
+</body>
+<script type="text/javascript">
+mouseOver=()=>{
+console.log("Hovered")
+test.style.background="yellow"
+test.style.color="black"
+}
+btnClick=()=>{
+    test1.style.background="green"
+    test1.style.color="orange"   
+}
+</script>
+</html>
